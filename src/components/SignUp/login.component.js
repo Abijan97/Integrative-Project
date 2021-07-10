@@ -1,4 +1,5 @@
 import React,{useState} from "react";
+import { Link } from "react-router-dom";
 import "./login.css";
 
  const SignIn=() =>{
@@ -52,6 +53,10 @@ import "./login.css";
     return (
 
       <div className="div-signin">
+              <div className="form-group mb-3"> 
+            <h3>login</h3>
+                
+              </div>
         
         <div>
         <form onSubmit={changeonClick}  encType='multipart/form-data'>
@@ -87,11 +92,17 @@ import "./login.css";
 
 
               <div className="form-group mb-3"> 
-                <input type="submit"  value="Submit" className="btn btn-primary" />
+                <input type="submit"  value="LOGIN" className="btn btn-primary" />
 
               </div>
+
             </form>
+            
+            <div className=" mb-3"> 
+            <span>Doesn't have an account? <Link to="/signup">Sign Up</Link></span>
+              </div>
         </div>
+        
       </div>
     
     );

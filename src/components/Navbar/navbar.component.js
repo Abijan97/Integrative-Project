@@ -11,10 +11,10 @@ export const Navbar=()=>{
         <ul className="navbar-nav mr-auto">
          
           <li className="navbar-item">
-          <Link to="/dashboard" className="nav-link">Sensor readings</Link>
+          <Link to="/home" className="nav-link">Sensor readings</Link>
           </li>
           <li className="navbar-item">
-          <Link to="/dashboard" className="nav-link">Add Sensors</Link>
+          <Link to="/home/sensor" className="nav-link">Add Sensors</Link>
           </li>
 
         </ul>

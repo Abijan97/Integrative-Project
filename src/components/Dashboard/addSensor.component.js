@@ -2,6 +2,7 @@
 import React, {useState} from 'react';
 //send http request to backend (connect to backend)
 import axios from 'axios';
+import "./sensor.css";
 //alert
 
 
@@ -10,7 +11,7 @@ const CreateSensor=()=>{
     
         
          
-
+    
 
         const [sensorType,setSensorType]=useState("");
         const [sensorId,setSensorId]=useState("");
@@ -62,7 +63,11 @@ const CreateSensor=()=>{
         return(
     
           
-
+            <div className="sensor">
+                    <div className="form-group mb-3"> 
+            <h3>Add Sensor</h3>
+                
+              </div>
 
             <form onSubmit={changeonClick}  encType='multipart/form-data'>
               <div className="form-group mb-3"> 
@@ -123,6 +128,8 @@ const CreateSensor=()=>{
 
               </div>
             </form>
+
+            </div>
 
        
         )
