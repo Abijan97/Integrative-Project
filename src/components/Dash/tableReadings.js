@@ -1,80 +1,67 @@
-import React, {Component} from 'react';
-import axios from 'axios';
+import React, { Component } from 'react'
 
 
-const Shipper =props=> (
 
+// import axios from 'axios';
+
+// const siAPI1= axios.create({
+//     baseURL :`http://localhost:9090/sensor/getalertsofsensor`
+//   })
+
+
+export default class AlertTable extends Component {
+
+// constructor(props){
+//   super(props);
+//   console.log("Alert" + this.props.sensorID)
+//   this.getAllSensorsReadings();
+// }
+
+// state={
+//   sensorReadings:[]
+// }
+
+// getAllSensorsReadings=()=>{
+//   siAPI1.get(`/1`).then(res=>{
+//       console.log(res.data)
+//       this.setState({
+//         sensorReadings:res.data
+//       })
+//   }).catch(err => {
+//    window.alert(err)
+// })
+// }
+
+
+    render() {
+        return (
+          <div style={{marginTop:"20px",width:"640px", padding: "18px"}}>
+
+            <div>
+                <table striped bordered hover size="sm" >
+  <thead>
     <tr>
-        <td>{props.shipper.shipperId}</td>
-        <td>{props.shipper.shipperName}</td>
-        <td>{props.shipper.email}</td>
-        <td>{props.shipper.mobile}</td>
-        
-       
+      <th>#</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Tempreature</th>
     </tr>
-)
-
-
-export default class ShipperList extends Component {
-    constructor(props) {
-      super(props); 
-  
-      this.deleteShipper = this.deleteShipper.bind(this)
-  
-      this.state = {shippers: []};
-    }
+  </thead>
+  {/* <tbody>
+  {this.state.sensorReadings.map(r=>
+    <tr>
+      <td>1</td>
+      <td><Moment format="YYYY/MM/DD">{r.date}</Moment></td>
+      <td><Moment format="hh:mm:ss">{r.date}</Moment></td>
+      <td>{r.temperaturevalue}</td>
+    </tr>
+  )}
     
-    componentDidMount() {
-      axios.get('http://localhost:5001/shippers/')
-        .then(response => {
-          this.setState({ shippers: response.data })
-        })
-        .catch((error) => {
-          console.log(error);  
-        })
+   
+  </tbody> */}
+</table>
+
+            </div> </div>
+        )
     }
-    
-    deleteShipper(id) {
-      axios.delete('http://localhost:5001/shippers/'+id)
-        .then(response => { console.log(response.data)});
-  
-      this.setState({
-        shippers: this.state.shippers.filter(el => el._id !== id) 
-      })
-    }
-  shipperList(){
-      return this.state.shippers.map(currentshipper=>{
-          return <Shipper shipper={currentshipper} deleteShipper={this.deleteShipper} key={currentshipper._id}/>
-
-      })
-  } 
-
-render(){
-    return (
-        <div className="container pt-5 pb-5">
-       <div className="pl-2">
-        <h3 className="text-primary">Sensor Readings</h3>
-        </div>
-        <div>
-        <table className="table table-boarded table-striped table-dark">
-          <thead className="thead-light">
-            <tr className=" ">
-              <th>Shipper Name</th>
-              <th>Shipper Id</th>
-              <th>Reading</th>
-              <th>Mobile</th>
-
-              <th>Actions</th>
-
-            </tr>
-          </thead>
-          <tbody>
-            { this.shipperList() } 
-          </tbody>
-        </table>
-      </div>
-      </div>
-    
-    )
-}
 }
