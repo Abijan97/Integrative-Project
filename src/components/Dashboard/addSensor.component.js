@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 //send http request to backend (connect to backend)
 import axios from 'axios';
 //alert
-import Swal from 'sweetalert2'
+
 
 
 const CreateSensor=()=>{
@@ -41,15 +41,6 @@ const CreateSensor=()=>{
                
             
         
-
-          
-            Swal.fire({
-              position: 'top-end',
-              icon: 'success',
-              title: 'Agent Saved',
-              showConfirmButton: false,
-              timer: 1500
-            })
             
 
             sensorType('');

@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(109, 233, 109);
+    background-color: rgb(3, 3, 17);
   }
   .div-signin {
     width: 400px;
@@ -15,7 +15,21 @@ body {
     background-color: white;
   }
   
+  .div-signup {
+    width: 400px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    border: 1px solid #dbdbdb;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 10vh;
+    background-color: white;
+  }
   
+
   
   input {
     width: 100%;

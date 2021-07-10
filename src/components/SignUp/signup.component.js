@@ -1,10 +1,16 @@
 import React,{useState} from "react";
 import "./login.css";
 
- const SignIn=() =>{
+ const Signup=() =>{
 
         const [email,setEmail]=useState("");
         const [password,setpassword]=useState("");
+        const [notificationType,setnotificationType]=useState("");
+        const [mobile,setMobile]=useState("");
+        
+        
+        
+
       
      
 
@@ -16,6 +22,8 @@ import "./login.css";
             //connect database
             formData.append("email",email);
             formData.append("password",password);
+            formData.append("notificationType",notificationType);
+            formData.append("mobile",mobile);
             
           
 
@@ -36,6 +44,8 @@ import "./login.css";
 
             setEmail('');
             setpassword('');
+            setnotificationType('');
+            setMobile('');
 
            
         
@@ -51,7 +61,7 @@ import "./login.css";
  
     return (
 
-      <div className="div-signin">
+      <div className="div-signup">
         
         <div>
         <form onSubmit={changeonClick}  encType='multipart/form-data'>
@@ -81,6 +91,31 @@ import "./login.css";
                     />
                     
               </div>
+
+              <div className="form-group mb-3"> 
+                <label>Mobile </label>
+                <input  type="password"
+                    required
+                    className="form-control"
+                    value={mobile}
+                    onChange={(e)=>setMobile(e.target.value)}
+            
+                    />
+                    
+              </div>
+              <div className="form-group mb-3"> 
+                <label>notification Type </label>
+                <select
+              required
+              className="form-control"
+              value={notificationType}
+              onChange={(e)=>setnotificationType(e.target.value)}>
+                  <option>Email</option>
+                  <option>Mobile</option>
+                {/* get these from database */}
+          </select>
+                    
+              </div>
             
 
              
@@ -99,4 +134,4 @@ import "./login.css";
 }
 
 
-export default SignIn;
+export default Signup;
